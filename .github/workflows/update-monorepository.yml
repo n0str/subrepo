@@ -1,20 +1,15 @@
-name: Update mono
-
+name: Update mono repository
 on: [push]
-
 jobs:
-
   build:
-
     runs-on: ubuntu-18.04
-
     steps:
-      - name: Repository Dispatch
+      - name: Mono repository update
         uses: peter-evans/repository-dispatch@v1
         env:
           REPOSITORY_MONO_PATH: subrepo
         with:
           token: ${{ secrets.EXP_TOKEN }}
-          event-type: my-event
+          event-type: submodule-changed
           repository: n0str/mono
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "path": "${REPOSITORY_MONO_PATH}"}'

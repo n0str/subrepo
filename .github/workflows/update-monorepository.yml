@@ -1,8 +1,11 @@
 name: Update mono repository
-on: [push]
+on:
+ push:
+   branches:
+     - master
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Mono repository update
         uses: peter-evans/repository-dispatch@v1

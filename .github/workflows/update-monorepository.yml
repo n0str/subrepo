@@ -12,9 +12,9 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         env:
-          REPOSITORY_MONO_PATH: "subrepo"
+          REPOSITORY_MONO_PATH: subrepo
         with:
           token: ${{ secrets.EXP_TOKEN }}
           event-type: my-event
           repository: n0str/mono
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "path": "${{ REPOSITORY_MONO_PATH }}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "path": "$REPOSITORY_MONO_PATH"}'

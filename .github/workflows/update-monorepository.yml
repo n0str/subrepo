@@ -15,4 +15,4 @@ jobs:
           token: ${{ secrets.MONO_TOKEN }}
           event-type: submodule-changed
           repository: n0str/mono
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "path": "${{ REPOSITORY_MONO_PATH }}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "path": "$REPOSITORY_MONO_PATH"}'

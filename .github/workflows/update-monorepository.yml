@@ -12,7 +12,7 @@ jobs:
         env:
           REPOSITORY_MONO_PATH: subrepo
         with:
-          token: ${{ secrets.EXP_TOKEN }}
+          token: ${{ secrets.MONO_TOKEN }}
           event-type: submodule-changed
           repository: n0str/mono
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "path": "${REPOSITORY_MONO_PATH}"}'
